@@ -78,13 +78,13 @@ public:
 	// 02177DC8
 	bool mainState();
 	// 02177260
-	bool riddenState();
+	bool riddenState(); // when a player rides the cloud
 	// 0217784C
 	bool idleState(); // when no one is riding the cloud
 	// 02177AC8
 	bool throwState();
 	// 02178088
-	bool spawnState();
+	bool spawnState(); // when spawned from background
 	// 02178468
 	bool inactiveState(); // when spawned with lakitu spawner and player leaves lakitu's zone
 
@@ -150,7 +150,8 @@ public:
 	RenderBitfield activeModels;
 	RenderBitfield skipRenderModels;
 	s8 mountedPlayerID;
-
+	u8 spawnSwerves;				// used in spawnState to count swerves until three, when lakitu is in play
+	
 
 	#include NTR_EXT_INCLUDE(Lakitu)
 
